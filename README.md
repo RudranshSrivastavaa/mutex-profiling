@@ -662,16 +662,9 @@ readers are still serialized.
 
 ------------------------------------------------------------------------
 
-# 20. Mutex-read profile screenshot
 
-Paste the URL of the screenshot here:
 
-**Mutex read pprof screenshot:**
-`PASTE_MUTEX_READ_PROFILE_SCREENSHOT_LINK_HERE`
-
-------------------------------------------------------------------------
-
-# 21. RWMutex read profile
+# 17. RWMutex read profile
 
 The `RWMutex` read benchmark produced:
 
@@ -688,18 +681,10 @@ The reason is that readers can share the read lock.
 
 ------------------------------------------------------------------------
 
-# 22. RWMutex profile screenshot
 
-Paste the URL of the screenshot here:
+# 18. Comparing the profiles
 
-**RWMutex read pprof screenshot:**
-`PASTE_RWMUTEX_READ_PROFILE_LINK_HERE`
-
-------------------------------------------------------------------------
-
-# 23. Comparing the profiles
-
-Your four profiles demonstrate an important pattern:
+My four profiles demonstrate an important pattern:
 
   Workload         Profile total Main observation
   -------------- --------------- -----------------------------------------
@@ -716,7 +701,7 @@ The important result is the **qualitative difference in contention**.
 
 ------------------------------------------------------------------------
 
-# 24. Why does the profiler show `runtime._LostContendedRuntimeLock`?
+# 19. Why does the profiler show `runtime._LostContendedRuntimeLock`?
 
 This runtime entry represents time associated with contended runtime
 locking that could not be attributed more specifically in the profile.
@@ -737,7 +722,7 @@ For application-level diagnosis, focus on:
 
 ------------------------------------------------------------------------
 
-# 25. The critical section is the real target
+# 20. The critical section is the real target
 
 Suppose production code looks like:
 
@@ -792,7 +777,7 @@ Now the critical section is much smaller.
 
 ------------------------------------------------------------------------
 
-# 26. A practical contention-debugging workflow
+# 21. A practical contention-debugging workflow
 
 When a production Go service is slow because of synchronization:
 
@@ -828,7 +813,7 @@ This is much better than blindly replacing synchronization primitives.
 
 ------------------------------------------------------------------------
 
-# 27. Commands cheat sheet
+# 22. Commands cheat sheet
 
 ## Run all benchmarks
 
@@ -878,7 +863,7 @@ go tool pprof -top rwmutex-read.prof
 
 ------------------------------------------------------------------------
 
-# 28. Key takeaways
+# 23. Key takeaways
 
 ### Takeaway 1 --- More concurrency can hurt
 
@@ -992,7 +977,7 @@ go tool pprof -top mutex.prof
 
 ------------------------------------------------------------------------
 
-# 29. Final experiment summary
+# 24. Final experiment summary
 
 This small benchmark demonstrates a progression from software-level
 synchronization to hardware-level effects:
@@ -1032,18 +1017,3 @@ The most important performance-engineering principle is:
 
 ------------------------------------------------------------------------
 
-# 30. Screenshots / evidence
-
-Replace the placeholders above with your uploaded screenshots or hosted
-image links.
-
-Suggested order:
-
-1.  Benchmark results
-2.  Single mutex profile
-3.  Sharded profile
-4.  Mutex-read profile
-5.  RWMutex-read profile
-
-This makes the README easy to verify: first show the benchmark numbers,
-then show the profiling evidence explaining the contention.
