@@ -356,7 +356,6 @@ So the benchmark did not introduce heap allocations per operation.
 My results were:
 
     Parallelism   ns/op
-  ------------- -------
               1   13.29
               2   74.22
               4   190.1
@@ -426,10 +425,9 @@ machine.
 
 # 11. Atomic results
 
-Your results were:
+My results were:
 
     Parallelism   ns/op
-  ------------- -------
               1   6.661
               2   21.73
               4   29.50
@@ -477,7 +475,6 @@ This gives an important performance lesson:
 The read benchmarks were:
 
     Parallelism      Mutex    RWMutex
-  ------------- ---------- ----------
               1   13.34 ns   13.33 ns
               2   49.34 ns   44.92 ns
               4   105.0 ns   58.58 ns
@@ -536,18 +533,18 @@ workload.
 
 It does **not** mean `RWMutex` should always replace `Mutex`.
 
+<p align="center">
+  <img src="screenshots/read-mutex.png" alt="GoDis Architecture" width="1200"/>
+</p>
+
+<p align="center">
+  <img src="screenshots/read-rwmutex.png" alt="GoDis Architecture" width="1200"/>
+</p>
+
+
 ------------------------------------------------------------------------
 
-# 13. Read benchmark screenshot
-
-Paste the URL of the read benchmark screenshot here:
-
-**Read benchmark screenshot:**
-`PASTE_READ_BENCHMARK_SCREENSHOT_LINK_HERE`
-
-------------------------------------------------------------------------
-
-# 14. Mutex profiling
+# 13. Mutex profiling
 
 Benchmarking tells us:
 
@@ -571,7 +568,7 @@ go tool pprof -top mutex.prof
 
 ------------------------------------------------------------------------
 
-# 15. Single mutex profile result
+# 14. Single mutex profile result
 
 The profile from the Apple M2 run reported:
 
@@ -601,18 +598,13 @@ Therefore, the useful question is:
 The profiler is helping identify the code responsible for making other
 goroutines wait.
 
-------------------------------------------------------------------------
-
-# 16. Single mutex profile screenshot
-
-Paste the URL of the screenshot here:
-
-**Single mutex pprof screenshot:**
-`PASTE_SINGLE_MUTEX_PROFILE_SCREENSHOT_LINK_HERE`
+<p align="center">
+  <img src="screenshots/mutex-prof.png" alt="GoDis Architecture" width="1200"/>
+</p>
 
 ------------------------------------------------------------------------
 
-# 17. Sharded mutex profile
+# 15. Sharded mutex profile
 
 The sharded benchmark profile reported:
 
@@ -640,18 +632,13 @@ distributes workers across independent locks.
 
 Again, this is a benchmark result, not a universal production guarantee.
 
-------------------------------------------------------------------------
-
-# 18. Sharded profile screenshot
-
-Paste the URL of the screenshot here:
-
-**Sharded pprof screenshot:**
-`PASTE_SHARDED_PROFILE_SCREENSHOT_LINK_HERE`
+<p align="center">
+  <img src="screenshots/sharded-prof.png" alt="GoDis Architecture" width="1200"/>
+</p>
 
 ------------------------------------------------------------------------
 
-# 19. Mutex read profile
+# 16. Mutex read profile
 
 The `sync.Mutex` read benchmark produced:
 
