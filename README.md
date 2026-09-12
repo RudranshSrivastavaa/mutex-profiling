@@ -6,7 +6,7 @@
 The benchmark compares four synchronization strategies/workloads:
 
   -----------------------------------------------------------------------
-  Benchmark     -----                      What it demonstrates
+  Benchmark     ---------------                  What it demonstrates
   
   `BenchmarkSingleMutex`              One mutex protecting one shared
                                       counter
