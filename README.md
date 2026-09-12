@@ -1,17 +1,5 @@
 # Go Mutex Contention, Sharding, Atomics & Mutex Profiling
 
-A runnable Go benchmark demonstrating:
-
--   `sync.Mutex` contention
--   Sharded locking
--   `sync/atomic`
--   `sync.Mutex` vs `sync.RWMutex` for reads
--   Cache-line padding / false-sharing considerations
--   Go mutex profiling with `pprof`
--   How to use profiling to find the critical section responsible for
-    contention
-
-------------------------------------------------------------------------
 
 ## 1. What this project demonstrates
 
@@ -46,28 +34,6 @@ doing useful work.
 
 ------------------------------------------------------------------------
 
-# 2. Project structure
-
-``` text
-mutexbench/
-├── go.mod
-├── mutex_contention_bench_test.go
-├── mutex.prof
-├── sharded.prof
-├── mutex-read.prof
-└── rwmutex-read.prof
-```
-
-The benchmark source should be named:
-
-``` text
-mutex_contention_bench_test.go
-```
-
-The `_test.go` suffix is important because Go's benchmark runner
-discovers `Benchmark...` functions from test files.
-
-------------------------------------------------------------------------
 
 # 3. Benchmark implementations
 
@@ -377,15 +343,9 @@ So the benchmark did not introduce heap allocations per operation.
 
 # 8. Benchmark screenshot
 
-Paste the URL of the benchmark screenshot here:
-
-**Benchmark results screenshot:** `PASTE_BENCHMARK_SCREENSHOT_LINK_HERE`
-
-Example:
-
-``` text
-https://your-image-host/benchmark-results.png
-```
+<p align="center">
+  <img src="screenshots/benchmark-mutex.png" alt="benchmark of mutex" width="1200"/>
+</p>
 
 ------------------------------------------------------------------------
 
