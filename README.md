@@ -1,5 +1,9 @@
 # Go Mutex Contention, Sharding, Atomics & Mutex Profiling
 
+<p align="center">
+  <img src="screenshots/architecture.png" alt="benchmark of mutex" width="1200"/>
+</p>
+
 
 ## 1. What this project demonstrates
 
