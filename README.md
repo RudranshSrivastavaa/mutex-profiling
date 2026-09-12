@@ -402,10 +402,10 @@ expensive than the uncontended one-worker case.
 My results were:
 
     Parallelism   ns/op
-              1   13.30
-              2   44.23
-              4   7.111
-              8   11.75
+         1        13.30
+         2        44.23
+         4         7.111
+         8         11.75
 
 Compared with the single mutex, the sharded implementation avoids making
 every worker compete for exactly one lock.
