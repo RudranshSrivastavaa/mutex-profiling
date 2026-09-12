@@ -706,7 +706,7 @@ The important result is the **qualitative difference in contention**.
 This runtime entry represents time associated with contended runtime
 locking that could not be attributed more specifically in the profile.
 
-It is not a function in your application that you should directly
+It is not a function in my application that you should directly
 optimize.
 
 For application-level diagnosis, focus on:
