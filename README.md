@@ -353,7 +353,7 @@ So the benchmark did not introduce heap allocations per operation.
 
 ## Single mutex
 
-Your results were:
+My results were:
 
     Parallelism   ns/op
   ------------- -------
@@ -399,10 +399,9 @@ expensive than the uncontended one-worker case.
 
 # 10. Sharded results
 
-Your results were:
+My results were:
 
     Parallelism   ns/op
-  ------------- -------
               1   13.30
               2   44.23
               4   7.111
